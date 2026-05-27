@@ -1,3 +1,44 @@
+[workspace.package]
+version = "0.2.2"
+edition = "2024"
+rust-version = "1.85"
+license = "AGPL-3.0-only"
+publish = false
+description = "Phoxal catalog component — oak_d_lite."
+documentation = "https://github.com/phoxal/component-oak_d_lite#readme"
+homepage = "https://github.com/phoxal/component-oak_d_lite"
+repository = "https://github.com/phoxal/component-oak_d_lite"
+
+[workspace]
+resolver = "3"
+members = ["."]
+
+[workspace.dependencies]
+anyhow = "1.0.102"
+clap = { version = "4.6.1", features = ["derive"] }
+phoxal-engine = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-utils-helpers = { git = "https://github.com/phoxal/framework", branch = "main" }
+tokio = { version = "1", features = ["macros", "rt", "rt-multi-thread", "time", "signal", "sync", "fs"] }
+tracing = "0.1.44"
+
+[workspace.lints.rust]
+unused = "warn"
+
+[profile.release]
+lto = false
+codegen-units = 16
+
+# Patch the engine alias so a transitive git fetch lines up with the framework canonical source.
+[patch."https://github.com/phoxal/engine"]
+phoxal-bus = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-component-api = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-engine = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-utils-component = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-utils-helpers = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-utils-robot = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-utils-spatial = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-utils-structure = { git = "https://github.com/phoxal/framework", branch = "main" }
+
 [package]
 name = "phoxal-component-oak_d_lite"
 version.workspace = true
