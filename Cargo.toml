@@ -17,7 +17,7 @@ members = ["."]
 anyhow = "1.0.102"
 clap = { version = "4.6.1", features = ["derive"] }
 phoxal-engine = { git = "https://github.com/phoxal/framework", branch = "main" }
-phoxal-utils-helpers = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-helpers = { git = "https://github.com/phoxal/framework", branch = "main" }
 tokio = { version = "1", features = ["macros", "rt", "rt-multi-thread", "time", "signal", "sync", "fs"] }
 tracing = "0.1.44"
 
@@ -33,11 +33,11 @@ codegen-units = 16
 phoxal-bus = { git = "https://github.com/phoxal/framework", branch = "main" }
 phoxal-component-api = { git = "https://github.com/phoxal/framework", branch = "main" }
 phoxal-engine = { git = "https://github.com/phoxal/framework", branch = "main" }
-phoxal-utils-component = { git = "https://github.com/phoxal/framework", branch = "main" }
-phoxal-utils-helpers = { git = "https://github.com/phoxal/framework", branch = "main" }
-phoxal-utils-robot = { git = "https://github.com/phoxal/framework", branch = "main" }
-phoxal-utils-spatial = { git = "https://github.com/phoxal/framework", branch = "main" }
-phoxal-utils-structure = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-component = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-helpers = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-robot = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-spatial = { git = "https://github.com/phoxal/framework", branch = "main" }
+phoxal-structure = { git = "https://github.com/phoxal/framework", branch = "main" }
 
 [package]
 name = "phoxal-component-oak_d_lite"
@@ -56,7 +56,7 @@ clap = { workspace = true, features = ["derive", "env"] }
 tokio = { workspace = true, features = ["macros", "rt", "rt-multi-thread"] }
 tracing = { workspace = true }
 phoxal-engine = { workspace = true }
-phoxal-utils-helpers = { workspace = true }
+phoxal-helpers = { workspace = true }
 
 [lints]
 workspace = true
